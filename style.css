@@ -237,6 +237,19 @@ ul, ol { list-style: none; }
 
 .logo:hover .logo-mark { background: var(--clr-accent); }
 
+.logo--light {
+  color: #fff;
+}
+
+.logo--light .logo-mark {
+  background: #fff;
+  color: var(--clr-primary-dark);
+}
+
+.logo--light:hover .logo-mark {
+  background: rgba(255,255,255,.8);
+}
+
 /* Nav links */
 .nav-links {
   display: flex;
@@ -1170,8 +1183,6 @@ ul, ol { list-style: none; }
   background: var(--clr-bg);
 }
 
-.trust-inner { }
-
 .trust-header { margin-bottom: var(--gap-xl); }
 
 .testimonials-grid {
@@ -1612,6 +1623,11 @@ ul, ol { list-style: none; }
   .footer-inner { grid-template-columns: 1fr; }
 
   .footer-links { grid-template-columns: repeat(3, 1fr); }
+
+  /* Tablet navigation improvements */
+  .nav-inner {
+    gap: 16px;
+  }
 }
 
 /* ============================================================
@@ -1624,6 +1640,42 @@ ul, ol { list-style: none; }
   .nav-cta { display: none; }
 
   .hamburger { display: flex; }
+
+  /* Improved mobile navigation layout */
+  .nav-inner {
+    justify-content: space-between;
+    gap: 8px;
+    padding-inline: 20px;
+  }
+
+  .logo {
+    margin-right: auto;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: none; /* Hide logo text on mobile for cleaner look */
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .theme-toggle {
+    order: 2;
+    margin-left: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  .hamburger {
+    order: 3;
+    margin-left: 0;
+    width: 36px;
+    height: 36px;
+  }
 
   .services-grid { grid-template-columns: 1fr; }
 
@@ -1648,4 +1700,37 @@ ul, ol { list-style: none; }
   .cta-actions { flex-direction: column; align-items: stretch; }
 
   .btn-ghost-light { text-align: center; }
+}
+
+/* ============================================================
+   RESPONSIVE — EXTRA SMALL SCREENS
+   ============================================================ */
+@media (max-width: 400px) {
+  .nav-inner {
+    padding-inline: 16px;
+    gap: 6px;
+  }
+
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .theme-toggle,
+  .hamburger {
+    width: 34px;
+    height: 34px;
+  }
+
+  .theme-toggle .icon-sun,
+  .theme-toggle .icon-moon,
+  .hamburger span {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hamburger span {
+    height: 1.5px;
+  }
 }
