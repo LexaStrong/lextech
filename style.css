@@ -203,8 +203,8 @@ ul, ol { list-style: none; }
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensure logo and actions are pushed to edges */
   height: var(--nav-h);
+  gap: var(--gap-md);
 }
 
 /* Logo */
@@ -242,9 +242,7 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   gap: var(--gap-sm);
-  /* On desktop, keep links to the right, but before actions */
   margin-inline-start: auto;
-  margin-inline-end: var(--gap-md);
 }
 
 .nav-link {
@@ -262,25 +260,20 @@ ul, ol { list-style: none; }
   background: var(--clr-accent-soft);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-sm);
-  flex-shrink: 0;
-}
-
 /* Theme toggle */
 .theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--r-full);
   color: var(--clr-text-muted);
   background: var(--clr-surface);
-  border: 1.5px solid var(--clr-border);
-  transition: all var(--dur-fast) var(--ease);
+  border: 1px solid var(--clr-border);
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
   flex-shrink: 0;
 }
 
@@ -288,11 +281,10 @@ ul, ol { list-style: none; }
   background: var(--clr-accent-soft);
   color: var(--clr-primary);
   border-color: var(--clr-primary);
-  transform: translateY(-1px);
 }
 
 .theme-toggle .icon-sun,
-.theme-toggle .icon-moon { width: 20px; height: 20px; }
+.theme-toggle .icon-moon { width: 18px; height: 18px; }
 
 [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
@@ -303,7 +295,7 @@ ul, ol { list-style: none; }
 .nav-cta {
   flex-shrink: 0;
   font-size: .88rem;
-  padding: 10px 22px;
+  padding: 9px 20px;
 }
 
 /* Hamburger */
@@ -312,13 +304,13 @@ ul, ol { list-style: none; }
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--r-sm);
-  padding: 8px;
+  padding: 6px;
   background: var(--clr-surface);
-  border: 1.5px solid var(--clr-border);
-  transition: all var(--dur-fast) var(--ease);
+  border: 1px solid var(--clr-border);
+  transition: background var(--dur-fast) var(--ease);
 }
 
 .hamburger span {
@@ -1628,7 +1620,8 @@ ul, ol { list-style: none; }
 @media (max-width: 640px) {
   :root { --gap-2xl: 4rem; }
 
-  .nav-actions { gap: 10px; }
+  .nav-links,
+  .nav-cta { display: none; }
 
   .hamburger { display: flex; }
 
