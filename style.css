@@ -211,43 +211,25 @@ ul, ol { list-style: none; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: var(--fw-bold);
-  font-size: 1.15rem;
-  letter-spacing: -.02em;
-  color: var(--clr-primary);
-  transition: color var(--dur-base) var(--ease);
+  transition: transform var(--dur-base) var(--ease);
   flex-shrink: 0;
 }
 
-.logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--clr-primary);
-  color: #fff;
-  font-weight: var(--fw-black);
-  font-size: .95rem;
-  border-radius: var(--r-sm);
-  letter-spacing: 0;
-  transition: background var(--dur-base) var(--ease);
+.logo:hover {
+  transform: scale(0.98);
 }
 
-.logo:hover .logo-mark { background: var(--clr-accent); }
-
-.logo--light {
-  color: #fff;
+.logo-img {
+  height: 76px;
+  width: auto;
+  display: block;
+  transition: filter var(--dur-base) var(--ease);
 }
 
-.logo--light .logo-mark {
-  background: #fff;
-  color: var(--clr-primary-dark);
-}
-
-.logo--light:hover .logo-mark {
-  background: rgba(255,255,255,.8);
+[data-theme="dark"] .logo-img,
+.logo--light .logo-img {
+  /* Inverts black logo text to white, while preserving the color balance of the green chevron using hue-rotate */
+  filter: invert(1) hue-rotate(180deg) brightness(1.2);
 }
 
 /* Nav links */
@@ -1653,14 +1635,8 @@ ul, ol { list-style: none; }
     flex-shrink: 0;
   }
 
-  .logo-text {
-    display: none; /* Hide logo text on mobile for cleaner look */
-  }
-
-  .logo-mark {
-    width: 32px;
-    height: 32px;
-    font-size: 0.85rem;
+  .logo-img {
+    height: 56px;
   }
 
   .theme-toggle {
@@ -1711,10 +1687,8 @@ ul, ol { list-style: none; }
     gap: 6px;
   }
 
-  .logo-mark {
-    width: 30px;
-    height: 30px;
-    font-size: 0.8rem;
+  .logo-img {
+    height: 48px;
   }
 
   .theme-toggle,
