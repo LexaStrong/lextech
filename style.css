@@ -220,11 +220,7 @@ ul, ol { list-style: none; }
 }
 
 .logo-img {
-<<<<<<< HEAD
-  height: 76px;
-=======
   height: 120px;
->>>>>>> feba30e (Lextech)
   width: auto;
   display: block;
   transition: filter var(--dur-base) var(--ease);
@@ -1640,11 +1636,7 @@ ul, ol { list-style: none; }
   }
 
   .logo-img {
-<<<<<<< HEAD
-    height: 56px;
-=======
     height: 90px;
->>>>>>> feba30e (Lextech)
   }
 
   .theme-toggle {
@@ -1696,11 +1688,7 @@ ul, ol { list-style: none; }
   }
 
   .logo-img {
-<<<<<<< HEAD
-    height: 48px;
-=======
     height: 70px;
->>>>>>> feba30e (Lextech)
   }
 
   .theme-toggle,
