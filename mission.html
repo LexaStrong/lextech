@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Lextech's Mission and Vision: Enabling African institutions to transition from legacy systems into fully functional digital ecosystems." />
+  <title>Mission & Vision — Lextech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+  <style>
+    .mission-hero {
+      padding-block: calc(var(--nav-h) + 100px) 100px;
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 50%, var(--clr-primary-light) 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-hero::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mission-hero-heading {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: var(--fw-black);
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin-bottom: 24px;
+    }
+
+    .mission-hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      max-width: 700px;
+      margin-inline: auto;
+      margin-bottom: 40px;
+    }
+
+    .mv-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-lg);
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .mv-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: left;
+    }
+
+    .mv-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--r-lg);
+      background: var(--clr-accent-soft);
+      color: var(--clr-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .mv-card h3 {
+      font-size: 1.4rem;
+      font-weight: var(--fw-extrabold);
+      color: var(--clr-text);
+      margin-bottom: 16px;
+    }
+
+    .mv-card p {
+      font-size: 1rem;
+      color: var(--clr-text-muted);
+      line-height: 1.7;
+      font-weight: var(--fw-medium);
+    }
+    
+    .mv-card-highlight {
+      font-weight: var(--fw-bold);
+      color: var(--clr-primary);
+    }
+
+    .problem-section {
+      padding-block: var(--gap-2xl);
+      background: var(--clr-bg-alt);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--gap-xl);
+      align-items: start;
+    }
+
+    .problem-insight {
+      background: var(--clr-accent-soft);
+      padding: 32px;
+      border-radius: var(--r-lg);
+      border-inline-start: 4px solid var(--clr-accent);
+    }
+
+    .problem-insight blockquote {
+      font-size: 1.25rem;
+      font-weight: var(--fw-bold);
+      color: var(--clr-primary);
+      line-height: 1.5;
+    }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .problem-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--clr-bg-card);
+      padding: 20px;
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--clr-border);
+    }
+
+    .problem-item-icon {
+      color: #ef4444;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .problem-item-content h4 {
+      font-size: .95rem;
+      font-weight: var(--fw-bold);
+      color: var(--clr-text);
+      margin-bottom: 6px;
+    }
+
+    .problem-item-content p {
+      font-size: .85rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+    }
+    
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-md);
+      margin-top: 40px;
+    }
+
+    .impact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .impact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--clr-bg-card);
+      border-radius: var(--r-md);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .impact-item-check {
+      color: var(--clr-green);
+      flex-shrink: 0;
+    }
+    
+    .impact-item p {
+      font-size: 1rem;
+      font-weight: var(--fw-medium);
+      color: var(--clr-text);
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .mv-cards, .problem-grid, .problem-list, .approach-grid {
+        grid-template-columns: 1fr;
+      }
+      .mv-cards { margin-top: 40px; }
+      .mission-hero { padding-block: calc(var(--nav-h) + 60px) 60px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" id="logo-link" aria-label="Lextech Home">
+        <img class="logo-img" src="assets/images/logo.png" alt="Lextech" />
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#process" class="nav-link">How It Works</a>
+        <a href="mission.html" class="nav-link" style="color: var(--clr-primary); font-weight: var(--fw-bold);">Mission & Vision</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.77" x2="5.64" y2="18.35"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="https://lexclient-zeta.vercel.app/" class="btn btn-primary nav-cta" id="nav-cta-btn">Work With Us</a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="index.html#services" class="mobile-link">Services</a>
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="index.html#process" class="mobile-link">How It Works</a>
+      <a href="mission.html" class="mobile-link" style="color: var(--clr-primary); font-weight: var(--fw-bold);">Mission & Vision</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+      <a href="https://lexclient-zeta.vercel.app/" class="btn btn-primary mobile-cta">Work With Us</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO & OPENING
+    ============================================================ -->
+    <section class="mission-hero">
+      <div class="container" data-animate="fade-up">
+        <div class="hero-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2); margin-bottom: 24px;">
+          <span class="badge-dot" style="background: #60a5fa;"></span>
+          Lextech's Pitch
+        </div>
+        <h1 class="mission-hero-heading">Institutional Engineering for Africa</h1>
+        <p class="mission-hero-sub">
+          Across Africa, the challenge is not a lack of technology. Cloud platforms, mobile infrastructure, and AI systems already exist. The real barrier is deeper: institutions were never structurally designed for digital transformation.
+          <br><br>
+          Most software fails not because it is weak—but because it assumes a level of institutional maturity that does not yet exist. <strong>This is the gap Lextech is built to close.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION & VISION CARDS
+    ============================================================ -->
+    <section class="container" style="padding-bottom: var(--gap-2xl);">
+      <div class="mv-cards" data-animate="fade-up">
+        <!-- Mission -->
+        <div class="mv-card">
+          <div class="mv-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Mission Statement</h3>
+          <p>
+            Lextech’s mission is to enable African institutions to transition from legacy, paper-based systems into fully functional digital ecosystems by redesigning processes, strengthening trust frameworks, and delivering adaptive technology that aligns with local operational realities.
+            <br><br>
+            <span class="mv-card-highlight">We do not simply digitize systems. We rebuild the pathway from analog governance to digital intelligence.</span>
+          </p>
+        </div>
+        <!-- Vision -->
+        <div class="mv-card">
+          <div class="mv-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2v2M12 20v2M22 12h-2M4 12H2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Vision Statement</h3>
+          <p>
+            To become Africa’s leading institutional transformation company—creating a continent where schools, SMEs, and public systems operate on transparent, efficient, and scalable digital infrastructure designed for real-world African conditions.
+            <br><br>
+            <span class="mv-card-highlight">A future where digitization is not imposed—but naturally adopted because systems are built around how institutions actually function, not how theory assumes they should.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THE PROBLEM
+    ============================================================ -->
+    <section class="problem-section" aria-labelledby="problem-heading">
+      <div class="container problem-grid">
+        <div class="problem-text" data-animate="fade-up">
+          <div class="section-label">The Reality</div>
+          <h2 class="section-heading" id="problem-heading">Africa’s digital gap is not technological—it is institutional.</h2>
+          <p class="section-body">
+            Lextech operates in environments shaped by deep structural complexities that standard software deployments completely ignore. We are built specifically to operate inside this complexity.
+          </p>
+          <div class="problem-insight">
+            <blockquote>"We are solving the environment in which software fails."</blockquote>
+          </div>
+        </div>
+        <div class="problem-list" data-animate="fade-in">
+          <div class="problem-item">
+            <div class="problem-item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="problem-item-content">
+              <h4>Historical Path Dependency</h4>
+              <p>Paper-based bureaucracy and legacy administrative authority systems dominate.</p>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="problem-item-content">
+              <h4>Technology Mismatch</h4>
+              <p>Imported software is built for fully digitized economies, not emerging ones.</p>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="problem-item-content">
+              <h4>Trust Deficits</h4>
+              <p>Fear of system failure, data loss, and external dependency slows adoption.</p>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-item-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="problem-item-content">
+              <h4>Informal Workflows</h4>
+              <p>Trust-based, flexible workflows clash with rigid software structures.</p>
+            </div>
+          </div>
+          <div class="problem-item" style="grid-column: 1 / -1;">
+             <p class="section-body" style="margin-bottom:0;"><em>Other core issues include: weak incentives for accountability, front-loaded cost constraints, leadership treating digitization as mere procurement, fragmented governance, and digitizing broken workflows instead of redesigning them.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THE APPROACH
+    ============================================================ -->
+    <section class="about" aria-labelledby="approach-heading">
+      <div class="container">
+        <div class="section-intro" data-animate="fade-up">
+          <div class="section-label">Core Differentiator</div>
+          <h2 class="section-heading" id="approach-heading">The Digital Transition Framework</h2>
+          <p class="section-body section-body--centered">
+            Instead of selling “software products,” Lextech delivers a framework built on four critical pillars.
+          </p>
+        </div>
+        
+        <div class="approach-grid" data-animate="fade-in">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3 class="service-title">1. Process First, Technology Second</h3>
+            <p class="service-body">We redesign institutional workflows before writing code—ensuring digitization improves systems, not replicates inefficiency.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="service-title">2. Incremental Digital Maturity Model</h3>
+            <p class="service-body">We move institutions step-by-step: Paper → Assisted digital → Hybrid systems → Full digital ecosystem. No forced leap. No unrealistic assumptions.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="service-title">3. Trust-Centered Infrastructure</h3>
+            <p class="service-body">We design for low digital trust: Offline-first systems, local backups with cloud redundancy, transparent audit trails, and clarity in data ownership.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="service-title">4. Embedded Change Management</h3>
+            <p class="service-body">We treat resistance as a design variable, not an obstacle. We focus on staff retraining, role redefinition, incentive alignment, and leadership onboarding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY LEXTECH WINS
+    ============================================================ -->
+    <section class="trust" style="background: var(--clr-bg-alt);" aria-labelledby="why-win-heading">
+      <div class="container trust-inner">
+        <div class="trust-header" data-animate="fade-up" style="max-width: 600px;">
+          <div class="section-label">The Paradigm Shift</div>
+          <h2 class="section-heading" id="why-win-heading">Why Lextech Wins Where Others Fail</h2>
+          <p class="section-body">
+            Most software companies ask: <em>“How do we sell this system?”</em><br>
+            Lextech asks: <em>“What must change in this institution for any system to actually work?”</em>
+          </p>
+          <p class="section-body">
+            This shift transforms Lextech from a vendor into a <strong>transformation partner</strong>. We are not competing with software companies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LONG-TERM IMPACT
+    ============================================================ -->
+    <section class="about" aria-labelledby="impact-heading">
+      <div class="container">
+        <div class="section-intro" data-animate="fade-up">
+          <div class="section-label">The Future</div>
+          <h2 class="section-heading" id="impact-heading">Long-Term Impact Vision</h2>
+          <p class="section-body section-body--centered">
+            If successful, Lextech enables a gradual collapse of paper dependency across critical sectors, setting a new standard for African digital infrastructure design.
+          </p>
+        </div>
+        <div class="impact-list" data-animate="fade-up">
+          <div class="impact-item">
+            <svg class="impact-item-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p>Fully digitized schools with real-time academic and administrative intelligence.</p>
+          </div>
+          <div class="impact-item">
+            <svg class="impact-item-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p>SMEs operating with structured financial, sales, and HR systems.</p>
+          </div>
+          <div class="impact-item">
+            <svg class="impact-item-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p>Government-adjacent institutions with transparent, auditable workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CLOSING CTA
+    ============================================================ -->
+    <section class="cta-section" id="cta">
+      <div class="container cta-inner">
+        <div class="cta-text" data-animate="fade-up">
+          <h2 class="cta-heading">That is institutional engineering.</h2>
+          <p class="cta-sub">
+            Lextech exists because digitization in Africa is not a plug-in problem—it is a systems redesign problem. We are building the bridge between how institutions currently function and how they must evolve to survive and scale in a digital economy. That is not software deployment.
+          </p>
+        </div>
+        <div class="cta-actions" data-animate="fade-up">
+          <a href="https://lexclient-zeta.vercel.app/" class="btn btn-white btn-lg" id="cta-main-btn">Work With Us</a>
+          <a href="mailto:info@lextechgh.com" class="btn btn-ghost-light btn-lg" id="cta-email-btn">info@lextechgh.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Lextech Home">
+          <img class="logo-img" src="assets/images/logo.png" alt="Lextech" />
+        </a>
+        <p class="footer-tagline">Technology that works.<br />Partners you can trust.</p>
+        <p class="footer-built">Built for Ghanaian businesses. Serving West Africa.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 class="footer-col-heading">Services</h4>
+          <a href="index.html#services" class="footer-link">Web Development</a>
+          <a href="index.html#services" class="footer-link">UI/UX Design</a>
+          <a href="index.html#services" class="footer-link">IT Support</a>
+          <a href="index.html#services" class="footer-link">Custom Software</a>
+          <a href="index.html#services" class="footer-link">Cloud Workspace</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-heading">Company</h4>
+          <a href="index.html#about" class="footer-link">About Us</a>
+          <a href="index.html#process" class="footer-link">How It Works</a>
+          <a href="mission.html" class="footer-link">Mission & Vision</a>
+          <a href="index.html#trust" class="footer-link">Testimonials</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-heading">Contact</h4>
+          <a href="mailto:info@lextechgh.com" class="footer-link">info@lextechgh.com</a>
+          <a href="https://wa.me/+233535548343" class="footer-link" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a>
+          <span class="footer-link footer-link--static">Accra, Ghana</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2025 Lextech. All rights reserved.</p>
+        <p class="footer-sub">Empowering businesses across Ghana &amp; West Africa with technology that works.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
